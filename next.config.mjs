@@ -1,8 +1,10 @@
 import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    webpack: (config) => {
-        config.devtool = "hidden-source-map";
+    webpack: (config, { dev }) => {
+        if (!dev) {
+            config.devtool = "hidden-source-map";
+        }
         return config;
     },
     experimental: {

@@ -7,7 +7,7 @@ export default function Button() {
             onClick={async () => {
                 const res = await fetch("/api/sentry-err");
                 if (!res.ok) {
-                    throw new Error("Sentry Example Frontend Error - TESTING");
+                    throw new Error("Sentry Example Frontend Error - DEV");
                 }
             }}
         >
